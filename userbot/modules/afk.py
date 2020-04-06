@@ -122,7 +122,7 @@ async def set_afk(afk_e):
     if string:
         AFKREASON = string
         await afk_e.edit("Sedang Offline!"
-                         f"\nReason: `{string}`")
+                         f"\nKarena: `{string}`")
     else:
         await afk_e.edit("Sedang Offline!")
     if BOTLOG:
