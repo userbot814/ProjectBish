@@ -53,8 +53,8 @@ async def mention_afk(mention):
         if ISAFK:
             if mention.sender_id not in USERS:
                 if AFKREASON:
-                    await mention.reply("I'm AFK right now."
-                                        f"\nBecause I'm `{AFKREASON}`")
+                    await mention.reply("SAYA SEDANG OFFLINE SEKARANG."
+                                        f"\nKarena Saya`{AFKREASON}`")
                 else:
                     await mention.reply(str(choice(AFKSTR)))
                 USERS.update({mention.sender_id: 1})
@@ -62,8 +62,8 @@ async def mention_afk(mention):
             elif mention.sender_id in USERS:
                 if USERS[mention.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await mention.reply("I'm still AFK."
-                                            f"\nReason: `{AFKREASON}`")
+                        await mention.reply("SAYA SEDANG OFFLINE."
+                                            f"\nKarena: `{AFKREASON}`")
                     else:
                         await mention.reply(str(choice(AFKSTR)))
                     USERS[mention.sender_id] = USERS[mention.sender_id] + 1
@@ -92,8 +92,8 @@ async def afk_on_pm(sender):
         if apprv and ISAFK:
             if sender.sender_id not in USERS:
                 if AFKREASON:
-                    await sender.reply("I'm AFK right now."
-                                       f"\nReason: `{AFKREASON}`")
+                    await sender.reply("SAYA SEDANG OFFLINE SEKARANG."
+                                       f"\nKARENA: `{AFKREASON}`")
                 else:
                     await sender.reply(str(choice(AFKSTR)))
                 USERS.update({sender.sender_id: 1})
@@ -101,8 +101,8 @@ async def afk_on_pm(sender):
             elif apprv and sender.sender_id in USERS:
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await sender.reply("I'm still AFK."
-                                           f"\nReason: `{AFKREASON}`")
+                        await sender.reply("SAYA SEDANG OFFLINR."
+                                           f"\nKARENA: `{AFKREASON}`")
                     else:
                         await sender.reply(str(choice(AFKSTR)))
                     USERS[sender.sender_id] = USERS[sender.sender_id] + 1
@@ -140,7 +140,7 @@ async def type_afk_is_not_true(notafk):
     global AFKREASON
     if ISAFK:
         ISAFK = False
-        msg = await notafk.respond("I'm no longer AFK.")
+        msg = await notafk.respond("SAYA SUDAH TIDAK OFFLINE.")
         await sleep(2)
         await msg.delete()
         if BOTLOG:
