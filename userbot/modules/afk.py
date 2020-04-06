@@ -101,7 +101,7 @@ async def afk_on_pm(sender):
             elif apprv and sender.sender_id in USERS:
                 if USERS[sender.sender_id] % randint(2, 4) == 0:
                     if AFKREASON:
-                        await sender.reply("SAYA SEDANG OFFLINR."
+                        await sender.reply("SAYA SEDANG OFFLINE."
                                            f"\nKARENA: `{AFKREASON}`")
                     else:
                         await sender.reply(str(choice(AFKSTR)))
@@ -121,10 +121,10 @@ async def set_afk(afk_e):
     global AFKREASON
     if string:
         AFKREASON = string
-        await afk_e.edit("Going AFK!"
+        await afk_e.edit("Sedang Offline!"
                          f"\nReason: `{string}`")
     else:
-        await afk_e.edit("Going AFK!")
+        await afk_e.edit("Sedang Offline!")
     if BOTLOG:
         await afk_e.client.send_message(BOTLOG_CHATID, "#AFK\nYou went AFK!")
     ISAFK = True
